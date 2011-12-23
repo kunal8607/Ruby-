@@ -1,0 +1,431 @@
+String 1 :
+RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag.
+
+
+now i have to check the occurance of RUBY in string 1 
+
+for this use scan method first this will gives the array likes this ["Ruby","RUBY","RUBY"]
+
+
+irb(main):053:0> str2=String.new("RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag.")
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+irb(main):054:0> k=str2.scan("RUBY")
+=> ["RUBY", "RUBY", "RUBY"]
+irb(main):055:0> k.length
+=> 3
+irb(main):056:0> 
+
+
+
+now how to capitalize string 1:
+	
+	i have use the capltalize method on string object 
+	
+	like 
+	
+	str= "capliatize me "
+	puts"str.capltalisze";
+	
+	
+	irb(main):056:0> puts str2.capitalize
+Ruby parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as ruby code. the parser then executes all of the code it finds until it runs into a ruby closing <br/> tag.
+=> nil
+
+
+
+
+String 2 :
+RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used.
+
+
+now to combine string 1 and string 2
+
+for this use the + operator in ruby the operators are also considered as method
+
+
+
+admin20@ubuntu:~$ irb
+irb(main):001:0> str2="RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+=> "RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+irb(main):002:0> str1="RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+irb(main):003:0> str1+str2
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag.RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+irb(main):004:0> 
+
+
+print date:
+	
+	The Date and DateClass classes reside in the Ruby date library. Before these classes and their respective methods can be used,
+	the date library must be included using the require directive:
+		require 'date'
+		
+		require 'date'
+
+date = Date.new(2011, 12, 16) // yyyy,mm,dd
+
+Having created the date object we can access the properties of the object:
+date.day
+=> 16
+
+date.month
+=> 12
+
+date.year
+=> 2011
+
+now to print date as   12th Jan 2012
+
+
+for this we need the strftime method:
+	strftime() turns a Date or DateTime into nicely formatted output. The following table shows the code you can use to create a nicely formatted date
+	
+	following are some formators
+	
+	
+	Letter	Output	Example
+%A	full day of week	Monday
+%a	abbrev day of week	Mon
+%B	full month name	September
+%b	abbrev month name	Sep
+%C	century (first two digits of year)	20
+%c	Day, month, time. year	Mon Sep 5 15:45:50 2009
+%D	western format with slashes	09/21/09
+%d	day of month (zero-padded)	05
+%e	day of month (space-padded)	 5
+%F	Year-month-day (with dash)	2009-09-05
+%G	4-digit year	2009
+%g	2-digit year	09
+%H	Hour (24 hour format)	15
+%h	abbrev month	Sep
+%I	hour (12 hour format)	03
+%j	day of year (number of days since Jan 1)	248
+%k	hour (24 hour format)	15
+%l	hour (12 hour format space padded)	 3
+%M	minute	45
+%m	month (zero padded)	09
+%n	newline	
+%P	am or pm (lowercase)	pm
+%p	AM or PM (uppercase)	PM
+%Q	milli-seconds since unix epoch (Jan 1 1970)	
+%R	hour:minute	15:45
+%r	hour:minute:second AM/PM	03:45:50 PM
+%S	seconds	50
+%s	seconds since unix epoch (Jan 1 1970)	1252165550
+%u	weekday as a decimal number	6
+%U	week number of the current year as a decimal number, starting with the first Sunday as the first day of the first week	35
+%V	The ISO 8601:1988 week number of the current year as a decimal number, range 01 to 53, where week 1 is the first week that has at
+  least 4 days in the current year, and with Monday as the first day
+  of the week.	36
+%W	week number of the current year as a decimal number, starting with the first Monday as the first day of the first week	35
+%w	day of the week as a decimal, Sunday being 0	6
+%x	preferred date representation for the current locale without the time	09/05/09
+%X	preferred time representation for the current locale without the date	15:45:50
+%y	year as a decimal number without a century (range 00 to 99)	09
+%Y	year as a decimal number including the century	2009
+%Z	time zone or name or abbreviation	+00:00
+%z	timezone offset	+0000
+%%	literal `%' character	%
+%L	millisecond	
+
+
+	
+	to print date as   12th Jan 2012: date.strftime("date is %eth %b %G")
+		
+		
+		
+		
+		irb(main):002:0> require 'date'
+=> true
+irb(main):003:0> date=Date.new(2012,1,12)
+=> #<Date: 4911885/2,0,2299121>
+irb(main):004:0> date.strftime(%d)
+SyntaxError: compile error
+(irb):4: unknown type of %string
+(irb):4: syntax error, unexpected $end, expecting ')'
+	from (irb):4
+	from :0
+irb(main):005:0> date.strftime("%d")
+=> "16"
+irb(main):006:0> date.strftime("%m")
+=> "01"
+irb(main):007:0> date.strftime("%b")
+=> "Jan"
+irb(main):008:0> date
+=> #<Date: 4911885/2,0,2299121>
+irb(main):009:0> date.strftime("date is %eth %b %G")
+=> "date is 12th Jan 2012"
+irb(main):010:0> 
+
+	
+	
+	
+	now to add 7 days to current date we will use + operator :
+		like 
+		date2=date1+7
+		
+		example
+		
+		
+		
+		
+		irb(main):007:0> require 'date'
+=> true
+irb(main):008:0> date=Date.today
+=> #<Date: 4911833/2,0,2299161>
+irb(main):010:0> date.strftime("date is %eth %b %G")
+=> "date is 21th Dec 2011"
+irb(main):011:0> date1=date+7
+=> #<Date: 4911847/2,0,2299161>
+irb(main):012:0> date1.strftime("date is %eth %b %G")
+=> "date is 28th Dec 2011"
+irb(main):013:0> 
+
+
+
+	
+	Divide the string 1 by occurances of '.'. Combine the array in reverse word sequence::::::::::::::::::::::::
+		
+		
+		
+		first of all wee need to spilit the string using split('.')
+method this will return us array 
+now we reverse it using reverse() method 
+ant then use the join method();
+
+
+example
+
+
+irb(main):020:0> str="hi, this, is, demo, string"
+=> "hi, this, is, demo, string"
+irb(main):021:0> arr=str.split(',')
+=> ["hi", " this", " is", " demo", " string"]
+irb(main):022:0> arr.reverse
+=> [" string", " demo", " is", " this", "hi"]
+irb(main):023:0> h=arr.join
+=> "hi this is demo string"
+irb(main):024:0> 
+
+
+
+
+irb(main):001:0> str="RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+irb(main):002:0> arr=str.split('.').reverse
+=> [" The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag", "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code"]
+irb(main):003:0> arr
+=> [" The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag", "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code"]
+irb(main):004:0> str1=arr.join
+=> " The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tagRUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code"
+irb(main):005:0> str=str+str1
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tagRUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code"
+irb(main):006:0> str
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tagRUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code"
+irb(main):007:0> 
+
+
+
+Remove the HTML characters from string1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+for this we can use the regular expression and gsub() method on string object
+
+ex
+
+
+irb(main):008:0> str="RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+irb(main):009:0> str.gsub(/<\/?[^>]*>/,"")
+=> "RUBY parses a file by looking for  one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing  tag."
+irb(main):010:0> 
+
+
+
+
+
+
+
+
+
+cut the string1 in 4 parts ::::::::::: for this we insert a pattern  in string i insert the !
+
+RUBY parses a file by looking for <br/> one of the special ! tags that tells it to start interpreting the ! text as RUBY code. The parser then ! executes all of the code it finds until it runs into a RUBY closing <br/> tag.
+
+
+
+
+irb(main):010:0> str="RUBY parses a file by looking for <br/> one of the special ! tags that tells it to start interpreting the ! text as RUBY code. The parser then ! executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+=> "RUBY parses a file by looking for <br/> one of the special ! tags that tells it to start interpreting the ! text as RUBY code. The parser then ! executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+irb(main):011:0> str.split('!')
+=> ["RUBY parses a file by looking for <br/> one of the special ", " tags that tells it to start interpreting the ", " text as RUBY code. The parser then ", " executes all of the code it finds until it runs into a RUBY closing <br/> tag."]
+irb(main):012:0> str.split('!').length
+=> 4
+irb(main):013:0> 
+
+
+
+
+
+
+
+
+Find the length of string 1 & 2::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	
+	
+	for this I will use the length method
+	
+	like str.length()
+	
+	
+	ex
+	
+	
+	
+	
+	
+	
+	irb(main):001:0> str1="RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+irb(main):002:0> str2="RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+=> "RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+irb(main):003:0> str1.length
+=> 217
+irb(main):004:0> str2.length
+=> 162
+irb(main):005:0> 
+
+
+
+
+13. Print the 'RUBY' word from string 1 by traversing it using string functions;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+for this we can use the scan() method which scan the string 
+for ex str.scan("RUBY");
+
+
+irb(main):005:0> str1.scan("RUBY")
+=> ["RUBY", "RUBY", "RUBY"]
+irb(main):006:0> 
+
+
+
+Compare two dates. (12-4-2010 & 12-5-2011). Calculate the days between these two dates.**************************************************
+
+for this we need 2 date object and compare them using - operator
+
+irb(main):010:0> date1=Date.new(2010,4,12)
+=> #<Date: 4910597/2,0,2299161>
+irb(main):011:0> date2=Date.new(2011,5,12)
+=> #<Date: 4911387/2,0,2299161>
+irb(main):012:0> (date2-date1).to_1()
+NoMethodError: undefined method `to_1' for Rational(395, 1):Rational
+	from (irb):12
+	from :0
+irb(main):013:0> (date2-date1).to_s()
+=> "395"
+irb(main):014:0> 
+
+
+
+
+
+
+Print date after 20 days from current date****************************************************************
+
+for this we need to add 20 to the current date returned by Date.today()
+
+
+
+
+
+irb(main):014:0> date=date.today
+NoMethodError: undefined method `today' for #<Date: 4911833/2,0,2299161>
+	from (irb):14
+	from :0
+irb(main):015:0> date=Date.today
+=> #<Date: 4911833/2,0,2299161>
+irb(main):016:0> date1=date+20
+=> #<Date: 4911873/2,0,2299161>
+irb(main):017:0> date2.to_s
+=> "2011-05-12"
+irb(main):018:0> 
+
+
+
+
+Print date in array format.*************************************************************
+
+for this first of all we need date object and convert it into string and then this string into array
+
+
+irb(main):001:0> require 'date'
+=> true
+irb(main):002:0> date=Date.today
+=> #<Date: 4911833/2,0,2299161>
+irb(main):003:0> s=date=Date.today.to_s
+=> "2011-12-21"
+irb(main):004:0> a=s.split('-')
+=> ["2011", "12", "21"]
+irb(main):005:0> puts a
+2011
+12
+21
+=> nil
+irb(main):006:0> 
+
+
+
+
+to show all the global variable by ruby 
+
+admin20@ubuntu:~/Projects/Ruby$ ruby -e 'puts global_variables.sort' 
+$!
+$"
+$$
+$&
+$'
+$*
+$+
+$,
+$-0
+$-F
+$-I
+$-K
+$-a
+$-d
+$-i
+$-l
+$-p
+$-v
+$-w
+$.
+$/
+$0
+$:
+$;
+$<
+$=
+$>
+$?
+$@
+$DEBUG
+$FILENAME
+$KCODE
+$LOADED_FEATURES
+$LOAD_PATH
+$PROGRAM_NAME
+$SAFE
+$VERBOSE
+$\
+$_
+$`
+$deferr
+$defout
+$stderr
+$stdin
+$stdout
+$~
+admin20@ubuntu:~/Projects/Ruby$ 
+
+
+

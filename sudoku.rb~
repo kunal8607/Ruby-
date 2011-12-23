@@ -1,0 +1,12 @@
+require 'matrix'
+puts("enter any odd number")
+n=gets().to_i;
+
+if(n%2==0) 
+	puts "odd number required"
+    return 1
+end
+m=Matrix.zero(n)
+puts m
+
+
